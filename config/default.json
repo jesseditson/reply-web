@@ -1,11 +1,11 @@
 {
   "environment" : "production",
   "db": {
-    "name": "some_db",
-    "host": "some-db-host", 
-    "port": 27017,
-    "user" : false,
-    "pass" : false,
+    "name": "replybot_db",
+    "host": "ds051447.mongolab.com", 
+    "port": 51447,
+    "user" : "replybot",
+    "pass" : "st4rtupjackson",
     "indexes" : {
       "users" : [
         { "index" : "username", "options" : { "unique" : true } },
