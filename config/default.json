@@ -1,0 +1,31 @@
+{
+  "environment" : "production",
+  "db": {
+    "name": "some_db",
+    "host": "some-db-host", 
+    "port": 27017,
+    "user" : false,
+    "pass" : false,
+    "indexes" : {
+      "users" : [
+        { "index" : "username", "options" : { "unique" : true } },
+        { "index" : "email", "options" : { "unique" : true } }
+      ]
+    }
+  },
+  "maxTooBusyLag" : 70,
+  "port": 3000,
+  "client" : { 
+    "css" : {
+      "all" : [],
+      "touch" : [],
+      "web" : []
+    },
+    "cdnjavascripts" : {
+      "/javascripts/vendor/jquery/1.9.1/jquery.js" : "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    },
+    "javascripts" : [
+      
+    ]
+  }
+}

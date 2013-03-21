@@ -1,0 +1,32 @@
+{
+  "name": "reply-web",
+  "version": "0.0.0",
+  "description": "web interface for making reply bots",
+  "main": "server.js",
+  "dependencies": {
+    "replybot": "~0.0.1",
+    "express": "~3.1.0",
+    "ecstatic": "~0.4.1",
+    "passport": "~0.1.16",
+    "config-heroku": "~0.1.1a",
+    "connect-mongo": "~0.3.2",
+    "ejs-locals": "~1.0.2",
+    "password-hash": "~1.2.1",
+    "underscore": "~1.4.4",
+    "wrench": "~1.4.4",
+    "mongodb": "~1.2.14",
+    "async-resource": "0.0.1",
+    "passport-local": "~0.1.6",
+    "toobusy": "~0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jesseditson/reply-web.git"
+  },
+  "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "license": "BSD"
+}

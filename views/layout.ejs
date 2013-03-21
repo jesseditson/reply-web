@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# quippery: http://ogp.me/ns/fb/quippery#">
+    <title><%= title %></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <%-
+      Object.keys(stylesheets).reduce(function(str,type){
+        var query = (type == 'touch')
+            ? 'screen and (max-width: 480px)'
+            : type == 'web'
+            ? 'screen and (min-width: 480px)'
+            : 'screen'
+        stylesheets[type].forEach(function(url){
+          str += '<link rel="stylesheet" href="'+url+'" media="'+query+'"/>\n'
+        })
+        return str
+      },"")
+    %>
+    <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" />
+    
+    <!-- modernizr -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <%- body %>
+    </div>
+    <%-
+      javascripts.map(function(url){
+        return '<script src="'+url+'"></script>'
+      }).join("\n")
+    %>
+  </body>
+</html>
