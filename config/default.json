@@ -1,5 +1,6 @@
 {
   "environment" : "production",
+  "title" : "Followers",
   "db": {
     "name": "replybot_db",
     "host": "ds051447.mongolab.com", 
@@ -13,11 +14,18 @@
       ]
     }
   },
+  "services" : {
+    "twitter" : {
+      "consumer_key" : "xJ3Nt154zxq7s4HblvrZng",
+      "consumer_secret" : "eVpQ4o2ZVl65tk28fkq8J98V49GmqwhM4Y3TTe3RKYI"
+    },
+    "callbackHost" : "http://followersapp.com"
+  },
   "maxTooBusyLag" : 70,
   "port": 3000,
   "client" : { 
     "css" : {
-      "all" : [],
+      "all" : ["*.css"],
       "touch" : [],
       "web" : []
     },
@@ -25,7 +33,7 @@
       "/javascripts/vendor/jquery/1.9.1/jquery.js" : "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     },
     "javascripts" : [
-      
+      "create.js"
     ]
   }
 }

@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Clearfix for issues with floating elements inside of boxes */
+.clearfix:before,
+.clearfix:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+body {
+  background-color:rgb(81,77,69);
+  color: rgb(167,162,141);
+  font-family:"SourceSansProSemibold","Helvetica",arial,sans-serif;
+}
+em {
+  font-family:"SourceSansProBold","Helvetica",arial,sans-serif;
+}
+a {
+  text-decoration:none;
+  color:inherit;
+  -webkit-transition:color 100ms linear;
+}
+a:hover {
+  color: rgb(88, 84, 70);
+}
+a:active {
+  color:rgb(213, 205, 179);
+}
+
+#header {
+  width:100%;
+}
+#header .content {
+  margin:10px 50px;
+  height:35px;
+  border-bottom: 2px solid rgb(121,118,110);
+  position:relative;
+}
+#header .logo {
+  font-size:30px;
+  color: rgb(121,118,110);
+  font-family:"GeometrySoftProBoldN";
+  cursor:pointer;
+  -webkit-user-select:none;
+}
+#header #nav {
+  position:absolute;
+  right:0px;
+  top:0px;
+}
+#nav .navIcon {
+  cursor:pointer;
+  padding:7px;
+  -webkit-transition:all 100ms linear;
+  border-top:1px solid transparent;
+  -webkit-user-select:none;
+}
+#nav .navIcon:hover {
+  background-color: rgb(71, 68, 61);
+  border-radius:4px;
+  border-top: 1px solid  rgb(87, 83, 74);
+}
+#nav .navIcon:active {
+  background-color: rgb(95, 91, 82);
+}
+
+#content ul .header {
+  background-color:rgb(173,98,97);
+  padding:10px 20px;
+  font-size:30px;
+  border-bottom: 5px solid hsl(1, 27%, 44%);
+}
+#content ul .bottom {
+  float:left;
+  width:100%;
+  margin-bottom: 20px;
+}
+#content ul .bottom .button {
+  float:right;
+  margin-right:10px;
+}
+#content ul {
+  width:100%;
+}
+#content > div {
+  width:100%;
+  max-width:600px;
+  position:relative;
+  margin: 0px auto;
+}
+.button {
+  width:200px;
+  text-align:center;
+  background-color: rgb(167, 162, 141);
+  color: hsl(40, 8%, 29%);
+  height:50px;
+  line-height:50px;
+  border-radius:2px;
+  box-shadow: 0px 1px 0px 1px hsl(47, 8%, 23%);
+  border-top: 1px solid hsl(45, 10%, 68%);
+  cursor:pointer;
+  font-family:"SourceSansProBlack","Helvetica",arial,sans-serif;
+  -webkit-transition:all 100ms ease-in;
+  -webkit-user-select:none;
+}
+.button:hover {
+  background-color: rgb(151, 146, 124);
+}
+.button:active {
+  box-shadow: 0px 0px 10px 0px rgb(39, 36, 29);
+  border-top:1px solid rgb(151, 146, 124);
+}

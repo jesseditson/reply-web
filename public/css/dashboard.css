@@ -1,0 +1,34 @@
+
+#dashboard .bots .bot {
+  font-size:24px;
+  clear:both;
+  float:left;
+  width:100%;
+  padding:20px 0px;
+}
+#dashboard .bots .bot:hover {
+  background-color:rgb(121,118,110);
+}
+#dashboard .bots .bot div {
+  float:left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+#dashboard .bots .bot .name i {
+  margin-left:10px;
+}
+#dashboard .bots .bot .options {
+  width:10%;
+  text-align: center;
+}
+#dashboard .bots .bot .status {
+  text-align:center;
+  width: 40%;
+}
+.new.button {
+  float:right;
+  margin-top:20px;
+  margin-right: 8px;
+}

@@ -16,8 +16,11 @@
     "wrench": "~1.4.4",
     "mongodb": "~1.2.14",
     "async-resource": "0.0.1",
-    "passport-local": "~0.1.6",
-    "toobusy": "~0.2.3"
+    "toobusy": "~0.2.3",
+    "passport-twitter": "~0.1.4",
+    "request": "~2.16.6",
+    "glob": "~3.1.21",
+    "wordgenerator": "0.0.1"
   },
   "devDependencies": {},
   "scripts": {
