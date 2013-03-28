@@ -10,6 +10,18 @@
   bottom: 10px;
   right:100px;
 }
+#content #attach ul .bottom .button.bot_login {
+  position:relative;
+  right:auto;
+  margin:auto;
+  bottom:auto;
+  width:400px;
+  height:100px;
+  font-size:30px;
+  line-height:100px;
+  top:30%;
+  float:none;
+}
 #content #attach ul .step1 {
   position:absolute;
   left:-100%;
@@ -20,4 +32,7 @@
   position:absolute;
   left:0px;
   width:100%;
+}
+#content #attach .big_container {
+  height:400px;
 }

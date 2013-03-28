@@ -1,4 +1,3 @@
-
 #dashboard .bots .bot {
   font-size:24px;
   clear:both;
@@ -9,23 +8,29 @@
 #dashboard .bots .bot:hover {
   background-color:rgb(121,118,110);
 }
-#dashboard .bots .bot div {
+#dashboard .bots .bot > div {
   float:left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 50%;
+}
+#dashboard .bots .bot .is_on {
+  width: 95px;
+  margin-left:10px;
 }
 #dashboard .bots .bot .name i {
   margin-left:10px;
 }
 #dashboard .bots .bot .options {
-  width:10%;
+  width:30px;
+  right:10px;
+  position:absolute;
   text-align: center;
 }
 #dashboard .bots .bot .status {
   text-align:center;
   width: 40%;
+  font-size:15px;
 }
 .new.button {
   float:right;

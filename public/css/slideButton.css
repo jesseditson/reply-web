@@ -1,0 +1,73 @@
+/* slideButton */
+.slideButton {
+  width: 100px;
+  -webkit-transition:all .15s ease-in-out;
+}
+.slideButton input[type="checkbox"] {
+  background-position: 0 0, 5px 0;
+  border-radius: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 36px;
+  padding-right: 81px;
+  position: relative;
+  width: 90px;
+  -webkit-appearance: none;
+  -webkit-transition:all .15s ease-in-out;
+}
+.slideButton input[type="checkbox"]:after {
+  border-top: 2px solid white;
+  box-shadow: 0 0 2px 1px #747065, 2px 0 11px -3px black;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.09) 50%, rgba(255, 255, 255, 0) 51%,rgba(255, 255, 255, 0) 100%);
+  border-radius: 50px;
+  margin: -5px -5px;
+  content: '';
+  display: block;
+  padding: 0;
+  width: 30px;
+  height: 28px;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: rgb(133, 124, 97);
+  -webkit-transition:all .15s ease-in-out;
+}
+.slideButton input[type="checkbox"]:checked:after {
+  box-shadow: 0 0 2px 1px #747065, -3px 0 11px -3px black;
+  margin: -5px -3px;
+}
+.slideButton input[type="checkbox"]:checked {
+  background-position: 0 0, 15px 0;
+  padding-left: 46px;
+  padding-right: 35px;
+}
+.slideButton input[type="checkbox"]:before {
+  color:#FFF;
+  content: 'OFF \00a0';
+  font-size: 17px;
+  left: 0px;
+  color: rgb(121,118,108);
+  font-family: "SourceSansProBlack","Helvetica",arial,sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0px;
+  position: absolute;
+  text-align:right;
+  text-transform: uppercase;
+  top: 0px;
+  width: 80px;
+  height: 32px;
+  border-radius: 50px;
+  box-shadow: inset 0px 3px 10px -2px rgba(0, 0, 0, 0.55), inset 0px 12px 1px 4px rgba(0, 0, 0, 0.09);
+  text-shadow:none;
+}
+.slideButton input[type="checkbox"]:checked:before {
+  color: rgb(80, 69, 42);
+  content: '\00a0\00a0ON';
+  left: 0px;
+  letter-spacing: 1px;
+  position: absolute;
+  text-align: left;
+  text-transform: uppercase;
+  background: rgb(170, 157, 114);
+}

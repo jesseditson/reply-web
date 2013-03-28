@@ -1,0 +1,50 @@
+.configure .field {
+  font-size:24px;
+  padding:10px 0px;
+  width:100%;
+}
+.configure .form {
+  margin-bottom:20px;
+}
+.configure input {
+  width:80%;
+  font-size:24px;
+  margin-left:20px;
+}
+.configure input[type="range"] {
+  width:50%;
+}
+.configure .maxRepliesField {
+  height: 55px;
+}
+.configure .max_replies_num {
+  position: absolute;
+  width:43px;
+  top: 30px;
+  height: 15px;
+  line-height: 18px;
+  left: 60%;
+  background-color: rgb(167,162,141);
+  color:rgb(81,77,69);
+  border-radius:3px;
+  border:0px;
+  padding:10px;
+  box-shadow: inset 0px 1px 1px 0px rgb(60, 53, 37), inset 0px -1px 1px 0px rgb(204, 193, 168);
+}
+.configure label {
+  padding: 0px 0px 10px 10px;
+}
+.configure .addReply.button {
+  float:right;
+  font-size:14px;
+  height:30px;
+  line-height:30px;
+  width:100px;
+  margin-right:80px;
+}
+.configure .removeReply {
+  line-height:55px;
+}
+.configure .field:hover {
+  background-color:rgb(121,118,110);
+}

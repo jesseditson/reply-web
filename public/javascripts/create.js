@@ -1,11 +1,11 @@
 $(function(){
   
-  $("#create")
+  $("#create,#configure")
     .on('click','.addReply',function(){
       // add reply
-      var replyForm = $("#create .replies .field").first().clone()
+      var replyForm = $(this).closest("form").find(".replies .field").first().clone()
       replyForm.find('input').val('')
-      $("#create .replies").append(replyForm.hide())
+      $(this).closest("form").find(".replies").append(replyForm.hide())
       replyForm.slideDown(400)
     })
     .on('click','.removeReply',function(){

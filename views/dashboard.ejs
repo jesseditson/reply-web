@@ -8,6 +8,11 @@
     </li>
     <% bots.forEach(function(bot){ -%>
     <li class="bot">
+      <div class="is_on">
+        <div class="slideButton">
+          <input type="checkbox" name="on" <%=bot.on ? "checked" : ""%>/>
+        </div>
+      </div>
       <div class="name">
         <i class="icon-comment"></i>
         <span><%= bot.name %></span>

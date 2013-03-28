@@ -34,7 +34,8 @@
     },
     "javascripts" : [
       "create.js",
-      "attach.js"
+      "attach.js",
+      "configure.js"
     ]
   }
 }

@@ -10,6 +10,10 @@ var toobusy = require('toobusy')
 var MongoStore = require('connect-mongo')(express);
 var db = require('./lib/mongoWrapper').db
 
+// start bots & stuff
+require('./lib/runner').bootstrap()
+
+
 toobusy.maxLag(config.maxTooBusyLag || 70)
 
 // Local Vars

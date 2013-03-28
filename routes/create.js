@@ -1,4 +1,5 @@
 var db = require('../lib/mongoWrapper').db.add('bots')
+var validateBot = require('../lib/validateBot')
 var WordGenerator = require('wordgenerator')
 var wordGenerator = new WordGenerator()
 
@@ -11,28 +12,7 @@ var create = function(req,res,next){
   if(!req.user) return next()
   if(!req.body) return next()
   var data = req.body
-  var errors = Object.keys(data).map(function(f){
-    switch(f){
-      case 'match' :
-        if(!data[f].length) return f + ' cannot be empty.'
-        try {
-          new RegExp(data[f])
-        } catch(e){
-          return f + ' is not a valid regular expression. ('+e.message+')'
-        }
-        break;
-      case 'in_reply_to' :
-        return false
-        break;
-      case 'replies' :
-        return data[f].
-        break;
-      default :
-        if(!data[f].length) return f + ' cannot be empty.'
-        break;
-    }
-    return false
-  }).filter(function(f){ return f })
+  var errors = validateBot(data)
   if(errors.length) return res.json({errors : errors})
   getBotSlug(data.name,function(err,slug){
     if(err) return res.json({error : err})
@@ -53,6 +33,7 @@ var create = function(req,res,next){
 }
 
 var getBotSlug = function(slug,callback,n){
+  slug = slug.replace(/[^\w\d\-_\+]/g,'').toLowerCase()
   var nextSlug = n ? slug + '-' + n : slug
   db.bots.findOne({slug : nextSlug},function(err,bot){
     n = (n || 0) + 1

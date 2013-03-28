@@ -1,0 +1,36 @@
+<%- layout('layout') -%>
+<div id="configure" class="configure" data-bot="<%=bot.slug%>">
+  <ul>
+    <li class="header">
+      <h4>Configure <em><%= bot.name %></em></h4>
+    </li>
+    <li class="currentUser">
+      <% if(bot.currentAccount){ %>
+        <h3>Tweeting as : <a href="http://twitter.com/<%= bot.currentAccount.screen_name%>"><%= bot.currentAccount.screen_name%></a></h3>
+        <div class="button bot_login">
+          <i class="icon-twitter"></i>
+          <span>Switch Account</span>
+        </div>
+      <%} else {%>
+        <h3>Not connected to an account</h3>
+        <div class="button bot_login">
+          <i class="icon-twitter"></i>
+          <span>Attach Twitter Account</span>
+        </div>
+      <%}%>
+    </li>
+    <%- partial('botForm',{bot : bot, action : "save"}) -%>
+    <li class="bottom">
+      <a href="/">
+        <div class="button back">
+          <i class="icon-double-angle-left"></i>
+          <span>Back</span>
+        </div>
+      </a>
+      <div class="button save">
+        <span>Save</span>
+        <i class="icon-double-angle-right"></i>
+      </div>
+    </li>
+  </ul>
+</div>

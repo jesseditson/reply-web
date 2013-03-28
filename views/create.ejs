@@ -1,85 +1,10 @@
 <%- layout('layout') -%>
-<div id="create">
+<div id="create" class="configure">
   <ul>
     <li class="header">
       <h4>Create a Bot</h4>
     </li>
-    <li class="form">
-      <form id="createForm" class="clearfix" action="/create" method="post">
-        <div class="field">
-          <div class="tooltip" data-for="name">
-            <div class="content">
-              <p>This is for your own reference.</p>
-              <p>Name your bot something clever, like "<em><%= randomName %></em>".</p>
-            </div>
-          </div>
-          <label for="name">Name</label>
-          <input type="text" name="name" placeholder="bot name" required/>
-        </div>
-        <div class="field">
-          <div class="tooltip" data-for="keywords">
-            <div class="content">
-              <p>The bot will only try to respond to tweets that contain these keywords.</p>
-              <p>Keywords that <em>must</em> match are separated by spaces, optional keywords are sparated by commas.</p>
-            </div>
-          </div>
-          <label for="keywords">Keywords</label>
-          <input type="text" name="keywords" placeholder="tweet keywords" required/>
-        </div>
-        <div class="field">
-          <div class="tooltip" data-for="match">
-            <div class="content">
-              <p>The bot will respond to tweets that match exactly these parameters.</p>
-              <p>You can use Regular Expressions or strings in this field.</p>
-            </div>
-          </div>
-          <label for="match">Match</label>
-          <input type="text" name="match" placeholder="match regex or string" required/>
-        </div>
-        <div class="replies">
-          <label for="replies[]">Replies</label>
-          <div class="field">
-            <div class="tooltip" data-for="replies[]">
-              <div class="content">
-                <p>The bot will reply to tweets with a random selection from one of these replies.</p>
-                <p>You can use capture groups from the match regex with $n, or pull parameters from the originating tweet with [parameter.name]</p>
-              </div>
-            </div>
-            <input type="text" name="replies[]" placeholder="reply string" required/>
-            <a class="removeReply">
-              <i class="icon-remove"></i>
-            </a>
-          </div>
-        </div>
-        <div class="field">
-          <div class="button addReply">
-            <i class="icon-comment"></i>
-            <span>add reply</span>
-          </div>
-        </div>
-        <div class="field maxRepliesField">
-          <div class="tooltip" data-for="max_replies_per_hour">
-            <div class="content">
-              <p>The bot will reply to no more than the indicated tweets per hour.</p>
-              <p>This is helpful for controlling spam & avoiding hitting the 100/day tweet limit</p>
-            </div>
-          </div>
-          <label for="max_replies_per_hour">Max replies per hour</label>
-          <input type="range" min="1" max="41.5" step="0.5" value="20" name="max_replies_per_hour"/>
-          <span class="max_replies_num">20</span>
-        </div>
-        <div class="field">
-          <div class="tooltip" data-for="in_reply_to">
-            <div class="content">
-              <p>This toggles the in_reply_to parameter for tweets.</p>
-              <p>If turned off, at-tweets will not be threaded. (not recommended, could cause spam flags.)</p>
-            </div>
-          </div>
-          <label for="in_reply_to">Add in_reply_to_id</label>
-          <input type="checkbox" name="in_reply_to" checked/>
-        </div>
-      </form>
-    </li>
+    <%- partial('botForm',{bot : {}, action : "create"}) -%>
     <li class="bottom">
       <div class="create button">
         <span>Attach Account</span>

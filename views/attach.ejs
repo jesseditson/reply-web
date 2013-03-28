@@ -1,28 +1,41 @@
 <%- layout('layout') -%>
-<div id="attach">
+<div id="attach" data-bot="<%=bot.slug%>">
   <ul>
     <li class="header">
       <h4>Attach <em><%= bot.name %></em> to a twitter account</h4>
     </li>
-    <li class="bottom step1">
+    <%
+    // iFraming log in doesn't work.
+    /*<li class="bottom step1">
       <h2>Create a twitter account below</h2>
-      <iframe id="twitter_signup" src="http://<%= host %>/twitter/create"></iframe>
+      <iframe id="twitter_signup" src="http://host/twitter/create"></iframe>
       <div class="button step1done">
         <span>Done</span>
         <i class="icon-double-angle-right"></i>
       </div>
-    </li>
+    </li>*/
+    -%>
     <li class="bottom step2">
-      <h2>Log in or Create a twitter account below</h2>
-      <iframe src="http://<%= host %>/auth/attach/twitter"></iframe>
-      <div class="button createAccount">
+      <h2>Log in to your bot account:</h2>
+      <div class="big_container">
+        <div class="button bot_login" data-bot="<%=bot.slug%>">
+          <i class="icon-twitter"></i>
+          <span>Log in with Twitter</span>
+        </div>
+      </div>
+      <%
+      // iFraming the login screen doesn't work, skipping this for now.
+      /*<div class="button createAccount">
         <i class="icon-twitter"></i>
         <span>Create a new Account</span>
-      </div>
-      <div class="button finished">
-        <span>Finished</span>
-        <i class="icon-double-angle-right"></i>
-      </div>
+      </div>*/
+      -%>
+      <a href="/">
+        <div class="button finished">
+          <span>Finished</span>
+          <i class="icon-double-angle-right"></i>
+        </div>
+      </a>
     </li>
   </ul>
 </div>
