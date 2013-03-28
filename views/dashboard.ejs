@@ -6,18 +6,20 @@
         <h4>Follower Bots</h4>
       </div>
     </li>
+    <% bots.forEach(function(bot){ -%>
     <li class="bot">
       <div class="name">
         <i class="icon-comment"></i>
-        <span>Some Robot</span>
+        <span><%= bot.name %></span>
       </div>
       <div class="status">
-        <span>status text</span>
+        <span><%= bot.status || "unknown" %></span>
       </div>
       <div class="options">
-        <a href="/bots/config/some-robot"><i class="icon-cog"></i></a>
+        <a href="/configure/<%= bot.slug %>"><i class="icon-cog"></i></a>
       </div>
     </li>
+    <% }) -%>
     <li class="bottom">
       <a href="/create">
         <div class="new button">

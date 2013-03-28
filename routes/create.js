@@ -53,11 +53,12 @@ var create = function(req,res,next){
 }
 
 var getBotSlug = function(slug,callback,n){
-  db.bots.findOne({slug : slug},function(err,bot){
+  var nextSlug = n ? slug + '-' + n : slug
+  db.bots.findOne({slug : nextSlug},function(err,bot){
     n = (n || 0) + 1
     if(err) return callback(err)
-    if(bot) return getBotSlug(slug + '-' + n,callback,n)
-    callback(null,slug)
+    if(bot) return getBotSlug(slug,callback,n)
+    callback(null,nextSlug)
   })
 }
 

@@ -21,6 +21,12 @@ $(function(){
     .on('keyup','input',function(){
       $(this).removeClass('fail')
     })
+    /*.on('keyup','.replies input',function(e){
+     var code = (e.keyCode ? e.keyCode : e.which)
+      if(code == 219){
+        // TODO: autocomplete fields from tweet
+      }
+    })*/
     .on('click','.create.button',function(){
       $('#create form').submit()
     })

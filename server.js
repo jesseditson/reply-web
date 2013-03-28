@@ -63,6 +63,7 @@ app.configure(function(){
     res.set('x-location',req.url)
     next()
   })
+  app.use(auth.middleware)
   // main routes
   app.use(app.router)
   // add auth routes
