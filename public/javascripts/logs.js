@@ -1,5 +1,31 @@
 $(function(){
-  $("#logs")
+  var dedupe = function(logs){
+    var stamps = {}
+    $(logs).each(function(){
+      stamps[$(this).attr('data-ts')] = this
+    })
+    $('.logMessage').each(function(){
+      var ts = $(this).attr('data-ts')
+      console.log(ts, Object.keys(stamps))
+      delete stamps[ts]
+    })
+    var uniqueLogs = []
+    for(var l in stamps){
+      uniqueLogs.push(stamps[l])
+    }
+    console.log(uniqueLogs)
+    return uniqueLogs
+  }
+  
+  var checkLogs = function(){
+    var bot = $('.more').attr('data-bot')
+    $.ajax('/logs/' + bot,function(r){
+      var els = dedupe($(r.html))
+      $("#logs .header").after(html)
+    })
+  }
+  
+  var logs = $("#logs")
     .on('click','.more',function(){
       var el = $(this)
       var page = el.attr('data-next')
@@ -12,7 +38,8 @@ $(function(){
         } else {
           hideLoading(0)
         }
-        el.closest('a').before(r.html)
+        var logs = dedupe($(r.html))
+        el.closest('a').before(logs)
         if(r.nextPage){
           el.attr("data-next", r.nextPage)
         } else {
@@ -20,4 +47,8 @@ $(function(){
         }
       })
     })
+  if(logs.length){
+    var checkLogsInterval = setInterval(checkLogs,5000)
+    checkLogs()
+  }
 })

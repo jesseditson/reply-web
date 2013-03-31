@@ -30,16 +30,19 @@ var humanizeLog = function(log){
     if(m && m.id_str){
       // this is a tweet response, parse it into something readable & link it.
       link = "http://twitter.com/" + m.user.screen_name + "/status/" + m.id_str
-      message += '"' + m.text + '"  '
+      message += '"' + m.text + '" '
+      if(m.in_reply_to_status_id_str){
+        message += 'in reply to tweet : http://twitter.com/'+m.in_reply_to_user_id_str+'/status/'+m.in_reply_to_status_id_str+' '
+      }
     } else {
       message += '"' + m + '"  '
     }
   })
   return {
-    info : log,
     level : log.level,
     message : message,
     time : moment(log.timestamp).fromNow(),
+    timestamp : log.timestamp.getTime(),
     link : link
   }
 }
@@ -54,7 +57,7 @@ var logs = function(req,res,next){
       if(!bot) return render(req,res,new Error("Invalid Bot"))
       var nextPage = false
       if(logs.length == pageSize) nextPage = req.params.page ? parseInt(req.params.page,10)+1 : 1
-      return render(req,res,null,{logs : logs, bot : bot, pageName : "logs", nextPage : nextPage})
+      return render(req,res,null,{logs : logs, bot : bot, pageName : "logs", nextPage : nextPage, pageSize : pageSize})
     })
   })
 }

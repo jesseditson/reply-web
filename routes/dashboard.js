@@ -12,8 +12,8 @@ var dashboard = function(req,res,next){
 }
 
 var addStatus = function(bot,done){
-  runner.status(bot,function(err,info){
-    bot.status = info.message
+  runner.status(bot,function(err,status){
+    bot.status = status
     done(null,bot)
   })
 }

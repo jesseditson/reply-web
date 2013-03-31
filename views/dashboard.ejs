@@ -10,7 +10,7 @@
     <li class="bot">
       <div class="is_on">
         <div class="slideButton">
-          <input type="checkbox" class="on" data-bot="<%=bot.slug%>" name="on" <%=bot.on ? "checked" : ""%>/>
+          <input type="checkbox" class="on" data-bot="<%=bot.slug%>" name="on" <%=bot.running ? "checked" : ""%>/>
         </div>
       </div>
       <a href="/logs/<%=bot.slug%>">
@@ -19,7 +19,12 @@
           <span><%= bot.name %></span>
         </div>
         <div class="status">
-          <span><%= bot.status || "unknown" %></span>
+          <% if(!bot.status) { %>
+            <span>status unknown</span>
+          <% } else { %>
+            <i class="icon-<%=bot.status.code == 0 ? 'ok' : bot.status.code == 1 ? 'warning-sign' : 'remove' %>"></i>
+            <span><%= bot.status.message %></span>
+          <% } %>
         </div>
       </a>
       <div class="options">

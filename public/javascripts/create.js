@@ -49,7 +49,7 @@ $(function(){
             if(r.error || r.errors){
               showError(r)
             } else {
-              showSuccess(r)
+              showSuccess("Saved Bot.")
               timeout = 500
             }
             hideLoading(timeout,function(){

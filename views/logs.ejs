@@ -7,7 +7,7 @@
     <%- partial('logItems') -%>
     <% if(nextPage){ %>
     <a>
-      <li class="more logMessage" data-next="<%=nextPage%>" data-bot="<%=bot.slug%>">
+      <li class="more logMessage" data-next="<%=nextPage%>" data-pagesize="<%=pageSize%>" data-bot="<%=bot.slug%>">
         <h5>More...</h5>
       </li>
     </a>

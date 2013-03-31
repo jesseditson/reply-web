@@ -1,6 +1,6 @@
     <% logs.forEach(function(item){ %>
       <% if(item.link) { %><a href="<%=item.link%>" target="_blank"><% } %>
-      <li class="logMessage clearfix">
+      <li class="logMessage clearfix" data-ts="<%= item.timestamp %>">
         <i class="icon-double-angle-right"></i>
         <span><%= item.time %></span>
         <span> - <%= item.level %> : </span>
