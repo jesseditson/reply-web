@@ -9,9 +9,9 @@
     "pass" : "st4rtupjackson",
     "indexes" : {
       "users" : [
-        { "index" : "username", "options" : { "unique" : true } },
-        { "index" : "email", "options" : { "unique" : true } }
-      ]
+        { "index" : "twitterId", "options" : { "unique" : true } }
+      ],
+      "logs" : [ "slug" ]
     }
   },
   "services" : {
@@ -33,9 +33,12 @@
       "/javascripts/vendor/jquery/1.9.1/jquery.js" : "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     },
     "javascripts" : [
+      "loader.js",
+      "dashboard.js",
       "create.js",
       "attach.js",
-      "configure.js"
+      "configure.js",
+      "logs.js"
     ]
   }
 }

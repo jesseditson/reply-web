@@ -10,16 +10,18 @@
     <li class="bot">
       <div class="is_on">
         <div class="slideButton">
-          <input type="checkbox" name="on" <%=bot.on ? "checked" : ""%>/>
+          <input type="checkbox" class="on" data-bot="<%=bot.slug%>" name="on" <%=bot.on ? "checked" : ""%>/>
         </div>
       </div>
-      <div class="name">
-        <i class="icon-comment"></i>
-        <span><%= bot.name %></span>
-      </div>
-      <div class="status">
-        <span><%= bot.status || "unknown" %></span>
-      </div>
+      <a href="/logs/<%=bot.slug%>">
+        <div class="name">
+          <i class="icon-comment"></i>
+          <span><%= bot.name %></span>
+        </div>
+        <div class="status">
+          <span><%= bot.status || "unknown" %></span>
+        </div>
+      </a>
       <div class="options">
         <a href="/configure/<%= bot.slug %>"><i class="icon-cog"></i></a>
       </div>

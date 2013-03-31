@@ -4,11 +4,12 @@
   float:left;
   width:100%;
   padding:20px 0px;
+  cursor:pointer;
 }
 #dashboard .bots .bot:hover {
   background-color:rgb(121,118,110);
 }
-#dashboard .bots .bot > div {
+#dashboard .bots .bot div {
   float:left;
   white-space: nowrap;
   overflow: hidden;

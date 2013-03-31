@@ -1,0 +1,24 @@
+<%- layout('layout') -%>
+<div id="logs">
+  <ul>
+    <li class="header">
+      <h4><em><%= bot.name %></em> latest activity</h4>
+    </li>
+    <%- partial('logItems') -%>
+    <% if(nextPage){ %>
+    <a>
+      <li class="more logMessage" data-next="<%=nextPage%>" data-bot="<%=bot.slug%>">
+        <h5>More...</h5>
+      </li>
+    </a>
+    <% } %>
+    <li class="bottom">
+      <a href="/">
+        <div class="button finished">
+          <i class="icon-double-angle-left"></i>
+          <span>home</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

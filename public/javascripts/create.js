@@ -39,7 +39,7 @@ $(function(){
         }
       })
       if(!failed){
-        var overlay = $("#loadingOverlay").fadeIn(200)
+        showLoading("Creating Bot...")
         $.ajax({
           url : $(this).attr('action'),
           type : 'POST',
@@ -47,17 +47,14 @@ $(function(){
           success : function(r){
             var timeout = 1000
             if(r.error || r.errors){
-              overlay.removeClass('loading').addClass('failed').find('span').html("Error : " + (r.error || "") + (r.errors || []).join(', '))
+              showError(r)
             } else {
-              overlay.removeClass('loading').addClass('success')
+              showSuccess(r)
               timeout = 500
             }
-            setTimeout(function(){
-              overlay.fadeOut(200,function(){
-                overlay.removeClass('failed').removeClass('success').addClass('loading')
-              })
+            hideLoading(timeout,function(){
               if(r.nextPage) window.location = r.nextPage
-            },timeout)
+            })
           }
         })
       }

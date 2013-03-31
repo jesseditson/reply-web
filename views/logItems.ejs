@@ -1,0 +1,10 @@
+    <% logs.forEach(function(item){ %>
+      <% if(item.link) { %><a href="<%=item.link%>" target="_blank"><% } %>
+      <li class="logMessage clearfix">
+        <i class="icon-double-angle-right"></i>
+        <span><%= item.time %></span>
+        <span> - <%= item.level %> : </span>
+        <p><%= item.message %></p>
+      </li>
+      <% if(item.link) { %></a><% } %>
+    <% }) %>

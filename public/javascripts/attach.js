@@ -4,7 +4,6 @@ $(function(){
   
   var botSlug = $("#attach").attr('data-bot')
   if(botSlug){
-    alert(botSlug)
     var lastUpdate
     // we're on a bot page, poll until the bot is updated.
     // commence super hacky polling

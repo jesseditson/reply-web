@@ -1,0 +1,37 @@
+#logs .logMessage {
+  width:100%;
+  padding: 15px 0px;
+  clear: both;
+  background-color: rgb(94, 90, 81);
+}
+#logs .logMessage:nth-child(odd) {
+  background-color: rgb(85, 81, 72);
+}
+#logs a:hover {
+  color:rgb(173,98,97);
+}
+#logs .logMessage > i {
+  margin-left:5px;
+  float:left;
+}
+#logs .logMessage > span {
+ float:left; 
+}
+#logs .logMessage > p {
+  float: left;
+  clear:both;
+  font-family:monospace;
+  padding: 8px 10px;
+}
+#logs .more {
+  text-align:center;
+  padding: 20px 0px;
+  cursor:pointer;
+}
+#logs .more:hover {
+  background-color: rgb(71, 68, 61);
+}
+#content #logs ul .bottom .button {
+  float: left;
+  margin-top:10px;
+}

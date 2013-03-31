@@ -21,7 +21,9 @@
     "request": "~2.16.6",
     "glob": "~3.1.21",
     "wordgenerator": "0.0.1",
-    "oauth": "~0.9.10"
+    "oauth": "~0.9.10",
+    "async": "~0.2.6",
+    "moment": "~2.0.0"
   },
   "devDependencies": {},
   "scripts": {
