@@ -5,6 +5,7 @@
     "name": "replybot_db",
     "host": "ds051447.mongolab.com", 
     "port": 51447,
+    "auth" : true,
     "user" : "replybot",
     "pass" : "st4rtupjackson",
     "indexes" : {
