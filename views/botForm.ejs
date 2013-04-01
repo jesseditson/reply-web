@@ -64,8 +64,8 @@
             </div>
           </div>
           <label for="max_replies_per_hour">Max replies per hour</label>
-          <input type="range" min="1" max="41.5" step="0.5" value="<%= (bot.max_replies_per_hour) ? bot.ax_replies_per_hour : 20 %>"name="max_replies_per_hour"/>
-          <span class="max_replies_num"><%= (bot.max_replies_per_hour) ? bot.ax_replies_per_hour : 20 %></span>
+          <input type="range" min="1" max="41.5" step="0.5" value="<%= (bot.max_replies_per_hour) ? bot.max_replies_per_hour : 20 %>"name="max_replies_per_hour"/>
+          <span class="max_replies_num"><%= (bot.max_replies_per_hour) ? bot.max_replies_per_hour : 20 %></span>
         </div>
         <div class="field">
           <div class="tooltip" data-for="in_reply_to">

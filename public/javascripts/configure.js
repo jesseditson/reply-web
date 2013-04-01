@@ -27,4 +27,13 @@ $(function(){
     .on('click','.save.button',function(){
       $('#configure form').submit()
     })
+    .on('click','#delete',function(){
+      var del = confirm("Are you sure you want to delete this bot?")
+      if(del){
+        $.getJSON('/bots/delete/' + botSlug,function(r){
+          // go home when done
+          window.location = '/'
+        })
+      }
+    })
 })

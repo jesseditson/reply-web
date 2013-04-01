@@ -3,7 +3,7 @@ var showLoading = function(message){
   overlay.removeClass('failed').removeClass('success').addClass('loading')
   if(message) overlay.find('.loading span').html(message)
 }
-var hideLoading = function(timeout){
+var hideLoading = function(timeout,done){
   var overlay = $("#loadingOverlay")
   setTimeout(function(){
     overlay.fadeOut(200,function(){
@@ -11,6 +11,7 @@ var hideLoading = function(timeout){
       overlay.find('.failed span').html('Failed.')
       overlay.find('.success span').html('Success!')
       overlay.find('.loading span').html('Loading...')
+      if(done) done()
     })
   },timeout)
 }

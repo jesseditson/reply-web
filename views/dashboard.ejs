@@ -26,6 +26,9 @@
             <span><%= bot.status.message %></span>
           <% } %>
         </div>
+        <div class="stats">
+          <span>~<%= bot.stats.current_replies_per_hour %> tweets per hour</span>
+        </div>
       </a>
       <div class="options">
         <a href="/configure/<%= bot.slug %>"><i class="icon-cog"></i></a>

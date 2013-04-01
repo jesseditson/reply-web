@@ -24,6 +24,16 @@ var status = function(req,res,next){
   })
 }
 
+var deleteBot = function(req,res,next){
+  db.bots.remove({slug : req.params.slug},function(err,success){
+    if(err) return res.json({error : err.message})
+    runner.stop(req.params.slug,function(err,response){
+      if(err) return res.json({error : err.message})
+      res.json(response)
+    })
+  })
+}
+
 var performBotMethod = function(method,req,res,next){
   runner[method](req.params.slug,function(err,info){
     if(err) return res.json({error : err.message, fatal : true})
@@ -39,6 +49,7 @@ var performBotMethod = function(method,req,res,next){
 
 module.exports = function(app){
   app.get('/bots/info/:slug',info)
+  app.get('/bots/delete/:slug',deleteBot)
   app.get('/bots/run/:slug',run)
   app.get('/bots/stop/:slug',stop)
   app.get('/bots/status/:slug',status)

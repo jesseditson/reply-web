@@ -8,6 +8,7 @@ var configure = function(req,res,next){
     if(err) return res.render('error',{error : err.message})
     wordGenerator.generate({num : 2, separator : ' '},function(err,name){
       bot.stringMatch = bot.match.toString().replace(/^\//,'').replace(/\/\w*$/,'')
+      bot.max_replies_per_hour = bot.max_replies_per_minute * 60
       res.render('configure', {bot : bot, randomName : name, pageName : "configure" })
     })
   })
